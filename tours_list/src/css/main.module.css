@@ -1,0 +1,33 @@
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  margin: 1em 0;
+  color: #026670;
+  position: relative;
+}
+
+.heading::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 5px;
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #fce181;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 2.5rem;
+  }
+}
