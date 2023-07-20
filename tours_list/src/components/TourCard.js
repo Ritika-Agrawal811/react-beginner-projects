@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-import { BsBookmark } from "react-icons/bs";
+import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import styles from "../css/list.module.css";
 import Button from "./UI/Button";
 
 const TourCard = ({ tour, filterToursHandler }) => {
   const [readMore, setReadMore] = useState(false);
-  const { id, name, info, image, price } = tour;
+  const { id, name, info, image, price, isBookmarked } = tour;
 
   const showInfoHandler = () => {
     setReadMore(!readMore);
@@ -36,10 +36,17 @@ const TourCard = ({ tour, filterToursHandler }) => {
             {readMore ? "Show Less" : "Read More"}
           </Button>
 
-          <BsBookmark
-            className={styles["bookmark-icon"]}
-            onClick={saveCardHandler}
-          />
+          {isBookmarked ? (
+            <BsBookmarkFill
+              className={styles["bookmark-icon"]}
+              onClick={saveCardHandler}
+            />
+          ) : (
+            <BsBookmark
+              className={styles["bookmark-icon"]}
+              onClick={saveCardHandler}
+            />
+          )}
         </div>
       </div>
     </article>

@@ -1,5 +1,5 @@
 .container {
-  width: min(90%, 1400px);
+  width: min(90%, 1300px);
 }
 
 .sub-heading {
@@ -23,6 +23,17 @@
   height: 450px;
   box-shadow: 0 0 2em 0 #edeae5, 0 0 0.25em 0.05em #aaa;
   overflow: hidden;
+  animation: zoomIn 350ms ease-in 1;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .tour-price {

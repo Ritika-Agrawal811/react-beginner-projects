@@ -12,34 +12,51 @@ const ToursSection = () => {
   const [tours, setTours] = useState([]);
   const [loading, setLoading] = useState(true);
   const [savedTours, setSavedTours] = useState([]);
+  const [recommendedTours, setRecommendedTours] = useState([]);
 
-  const filterRecommenedToursHandler = (id) => {
-    let recommendedTours = tours.filter((value) => value.id !== id);
-    let bookmarked = tours.filter((value) => value.id === id);
+  const filterToursHandler = (id) => {
+    let updatedTours = tours.map((value) => {
+      if (value.id === id) {
+        value.isBookmarked = !value.isBookmarked;
+      }
 
-    setTours(recommendedTours);
-    setSavedTours((prevState) => {
-      return [...prevState, ...bookmarked];
+      return value;
     });
+
+    setTours(updatedTours);
+    filterRecommendToursHandler();
+    filterSavedToursHandler();
   };
 
-  const filterSavedToursHandler = (id) => {
-    let bookMarkedTours = savedTours.filter((value) => value.id !== id);
-    let recommended = savedTours.filter((value) => value.id === id);
+  const filterRecommendToursHandler = () => {
+    let filteredTours = tours.filter((value) => value.isBookmarked === false);
 
-    setSavedTours(bookMarkedTours);
-    setTours((prevState) => {
-      return [...prevState, ...recommended];
-    });
+    setRecommendedTours(filteredTours);
   };
 
+  const filterSavedToursHandler = () => {
+    let filteredTours = tours.filter((value) => value.isBookmarked);
+
+    setSavedTours(filteredTours);
+  };
+
+  // Fetch Tours Data from API
   const fetchTours = async () => {
     setLoading(true);
 
     try {
-      const response = await fetch(url).then((res) => res.json());
+      const response = await fetch(url)
+        .then((res) => res.json())
+        .then((res) =>
+          res.map((item) => {
+            // Adding isBoomarked flag for each tour object in the response
+            item.isBookmarked = false;
+            return item;
+          })
+        );
       setLoading(false);
       setTours(response);
+      setRecommendedTours(response);
     } catch (error) {
       setLoading(false);
       console.log(error);
@@ -56,18 +73,18 @@ const ToursSection = () => {
         <Loading />
       ) : (
         <Wrapper className={styles["container"]}>
-          {tours.length !== 0 && (
+          {recommendedTours.length !== 0 && (
             <List
-              toursArray={tours}
+              toursArray={recommendedTours}
               heading="Recommended"
-              filterToursHandler={filterRecommenedToursHandler}
+              filterToursHandler={filterToursHandler}
             />
           )}
           {savedTours.length !== 0 && (
             <List
               toursArray={savedTours}
               heading="Saved"
-              filterToursHandler={filterSavedToursHandler}
+              filterToursHandler={filterToursHandler}
             />
           )}
         </Wrapper>
