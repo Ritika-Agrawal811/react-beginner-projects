@@ -14,13 +14,20 @@ const Post = () => {
       (item) => item.id.toString() === params.id
     ).markdownTitle;
 
-    import(`../markdown/${markdownTitle}.md`).then((res) => {
-      fetch(res.default)
-        .then((res) => res.text())
-        .then((res) => setPostContent(res))
-        .catch((err) => console.log(err));
-    });
-  }, []);
+    const fetchPostData = async (markdownTitle) => {
+      try {
+        const fileData = await import(`../markdown/${markdownTitle}.md`);
+        let postData = await fetch(fileData.default);
+        postData = await postData.text();
+
+        setPostContent(postData);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+
+    fetchPostData(markdownTitle);
+  }, [params.id]);
 
   return (
     <section className={`container ${styles["post__container"]}`}>

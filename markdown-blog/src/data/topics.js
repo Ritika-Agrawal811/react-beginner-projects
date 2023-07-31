@@ -10,14 +10,14 @@ export const topics = [
     id: 2,
     title: "JavaScript Array Methods",
     description: "Explaining various array methods with code snippets.",
-    markdownTitle: "jsArrays",
+    markdownTitle: "jsArrayMethods",
     headerColor: "#B31312",
   },
   {
     id: 3,
     title: "Useful JavaScript Array Code Snippets",
     description: "A collection of various array related tasks.",
-    markdownTitle: "jsArrayMethods",
+    markdownTitle: "jsArrays",
     headerColor: "#643843",
   },
 ];

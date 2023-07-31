@@ -34,6 +34,7 @@ body {
 .app__wrapper {
   background: var(--background-body);
   color: var(--text-color);
+  min-height: 100vh;
 }
 
 .container {
