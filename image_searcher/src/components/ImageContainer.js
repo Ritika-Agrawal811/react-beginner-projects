@@ -1,16 +1,10 @@
 import React, { useContext } from "react";
 import ImageContext from "../context/ImageContext";
 import ImageCard from "./ImageCard";
-import { CircleFadeLoader } from "react-loaders-kit";
+import EmtpyCard from "./EmtpyCard";
 
 const ImageContainer = () => {
   const { response, isLoading, error, queryEntry } = useContext(ImageContext);
-  const loaderProps = {
-    loading: isLoading,
-    size: 35,
-    duration: 1,
-    colors: ["#5e22f0", "#f6b93b"],
-  };
 
   return (
     <section>
@@ -20,22 +14,18 @@ const ImageContainer = () => {
         </h2>
       )}
 
-      {isLoading && !error ? (
-        <div className="grid place-items-center my-10">
-          <CircleFadeLoader {...loaderProps} />
-        </div>
-      ) : (
-        <div className="md:max-w-7xl md:mx-auto grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 my-10">
-          {response.map((image) => {
-            return (
-              <ImageCard
-                key={image.id}
-                image={image}
-              />
-            );
-          })}
-        </div>
-      )}
+      <div className="md:max-w-7xl md:mx-auto grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 my-10">
+        {response.map((image) =>
+          !isLoading && !error ? (
+            <ImageCard
+              key={image.id}
+              image={image}
+            />
+          ) : (
+            <EmtpyCard key={image.id} />
+          )
+        )}
+      </div>
     </section>
   );
 };

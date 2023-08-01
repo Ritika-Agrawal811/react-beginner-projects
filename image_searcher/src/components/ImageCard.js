@@ -14,7 +14,7 @@ const ImageCard = ({ image }) => {
           alt={alt_description}
           width={width}
           height={height}
-          className="h-80 object-cover"
+          className="h-80 object-cover bg-gray-100"
         />
       </a>
       <figcaption
