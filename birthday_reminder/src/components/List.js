@@ -7,7 +7,7 @@ import BirthdayCount from "./BirthdayCount";
 import styles from "../css/list.module.css";
 import data from "../data";
 
-const List = (props) => {
+const List = () => {
   const [people, setPeople] = useState(data);
 
   const emptyListHandler = () => {
@@ -28,7 +28,8 @@ const List = (props) => {
               <li key={id} className={styles["person-card"]}>
                 <img src={image} alt={name} />
                 <div>
-                  <h4>{name}</h4> <p>{age} years</p>
+                  <h4>{name}</h4>
+                  <p>{age} years</p>
                 </div>
               </li>
             );

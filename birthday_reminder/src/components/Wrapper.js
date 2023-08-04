@@ -1,5 +1,5 @@
-const Wrapper = (props) => {
-  return <section className={props.className}>{props.children}</section>;
+const Wrapper = ({ className, children }) => {
+  return <section className={className}>{children}</section>;
 };
 
 export default Wrapper;
