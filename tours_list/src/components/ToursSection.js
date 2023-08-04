@@ -54,12 +54,14 @@ const ToursSection = () => {
             return item;
           })
         );
-      setLoading(false);
+
       setTours(response);
       setRecommendedTours(response);
     } catch (error) {
       setLoading(false);
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
