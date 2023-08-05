@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.app__container {
+  width: min(95%, 1200px);
+  margin: 2em auto;
+}
+
+/* Filter Buttons */
+.filter-buttons__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-button {
+  font-size: 1.05rem;
+  border: 0;
+  border-radius: 100vmax;
+  margin: 0.5em;
+  padding: 0.5em 1.5em;
+  background-color: #121212;
+  color: #fff;
+  cursor: pointer;
+}
+
+.filter-button.active {
+  background-color: blue;
+}
+
+/* Movies List */
+
+.movies-list__container {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1em;
+}
+
+.movies-list__card {
+  padding: 0;
+  height: 300px;
+}
+
+.movies-list__image {
+  width: 100%;
+  height: 80%;
+}
+
+.movies-list__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.movies-list__card-content {
+  padding: 0.5em;
+  height: 20%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #121212;
+  border-radius: 0 0 10px 10px;
+}
+
+.movies-list__card-content h3 {
+  font-size: 18px;
+}
+
+.movies-list__card-content span {
+  border: 2px solid #ffd700;
+  border-radius: 100vmax;
+  padding: 0.15em 0.75em;
+  font-size: 13px;
+  color: #ffd700;
+}
+
+@media (min-width: 540px) {
+  .movies-list__card-content h3 {
+    font-size: calc(12px + 0.25vw);
+  }
+}
