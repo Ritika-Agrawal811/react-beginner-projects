@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { motion, AnimatePresence } from "framer-motion";
 import Controls from "./Controls";
 import styles from "../css/testimonial.module.css";
 import users from "../data";
@@ -7,70 +7,59 @@ import users from "../data";
 const Testimonial = () => {
   const [index, setIndex] = useState(0);
   const [indicator, setIndicator] = useState(0);
-  const [fade, setFade] = useState("fade");
   const { name, job, image, text } = users[index];
 
-  const showNextTestimonialHandler = () => {
-    setIndex((prevState) => {
-      return prevState === users.length - 1 ? 0 : prevState + 1;
-    });
-
-    setIndicator((prevState) => {
-      return prevState === users.length - 1 ? 0 : prevState + 1;
-    });
-
-    setFade("fade");
-
-    setTimeout(() => {
-      setFade("");
-    }, 400);
-  };
-
-  const showPrevTestimonialHandler = () => {
-    setIndex((prevState) => {
-      return prevState === 0 ? users.length - 1 : prevState - 1;
-    });
-
-    setIndicator((prevState) => {
-      return prevState === 0 ? users.length - 1 : prevState - 1;
-    });
-
-    setFade("fade");
-
-    setTimeout(() => {
-      setFade("");
-    }, 400);
+  const slideVariants = {
+    moveLeft: {
+      x: "-100%",
+    },
+    visible: {
+      x: "0",
+      transition: {
+        duration: 1,
+      },
+    },
+    exit: {
+      x: "100%",
+      transition: {
+        duration: 0.5,
+      },
+    },
   };
 
   return (
     <section className={styles["flex-center"]}>
-      <article className={styles["container"]}>
+      <article className={styles.container}>
         <div className={styles["indicator-container"]}>
           {users.map((value, index) => {
             return (
               <div
                 key={value.id}
-                className={
-                  index === indicator
-                    ? styles["active"] + " " + styles["indicator"]
-                    : styles["indicator"]
-                }
+                className={`${styles.indicator} ${
+                  index === indicator ? styles.active : ""
+                }`}
               ></div>
             );
           })}
         </div>
-        <figure className={styles["testimonial-image"]}>
-          <img src={image} alt="" className={styles[fade]} />
-        </figure>
+        <AnimatePresence>
+          <motion.figure
+            key={index}
+            variants={slideVariants}
+            initial="moveLeft"
+            animate="visible"
+            exit="exit"
+            className={styles["testimonial-image"]}
+          >
+            <img src={image} alt="" />
+          </motion.figure>
+        </AnimatePresence>
         <div className={styles["testimonial-content"]}>
           <h2 className={styles["testimonial-name"]}>{name}</h2>
           <h4 className={styles["testimonial-designation"]}>{job}</h4>
           <p className={styles["testimonial-text"]}>{text}</p>
         </div>
-        <Controls
-          showPrevTestimonialHandler={showPrevTestimonialHandler}
-          showNextTestimonialHandler={showNextTestimonialHandler}
-        />
+        <Controls setIndex={setIndex} setIndicator={setIndicator} />
       </article>
     </section>
   );

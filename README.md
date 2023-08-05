@@ -4,8 +4,9 @@ A collection of beginner friendly projects to learn and practice React JS. Each 
 
 - [Birthday Reminder](#birthday-reminder)
 - [Tours List](#tours-list-sparkles)
+- [Testimonials Carousel](#testimonials-carousel)
 
-### Birthday Reminder
+### Birthday Reminder :sparkles:
 
 A small project to display birthdays of people.
 <br/>
@@ -27,9 +28,17 @@ A small project to display birthdays of people.
 
 <img src="https://drive.google.com/uc?export=view&id=16ZDlYm9LfetbjQlobTDyMd3nKk9mVtcw" alt="birthday reminder project gif" width="85%" height="85%">
 
-### Testimonials Carousel
+### Testimonials Carousel :sparkles:
 
-A carousel to display testimonials!
+A responsive carousel to display testimonials!
+<br/>
+:paperclip: View code [here](https://github.com/Ritika-Agrawal811/react-beginner-projects/tree/main/testimonials_carousel)
+
+#### Concepts Used :memo:
+
+- Animation using Framer Motion
+
+<img src="https://drive.google.com/uc?export=view&id=1pDZoN3TQm2_WnNSTEzL9lBiXjOVaFsgY" alt="tours list project gif" width="85%" height="85%">
 
 ### Tours List :sparkles:
 
