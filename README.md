@@ -5,6 +5,7 @@ A collection of beginner friendly projects to learn and practice React JS. Each 
 - [Birthday Reminder](#birthday-reminder)
 - [Tours List](#tours-list-sparkles)
 - [Testimonials Carousel](#testimonials-carousel)
+- [Image Filter Animation]
 
 ### Birthday Reminder :sparkles:
 
@@ -63,3 +64,17 @@ A tours list project which fetches data about tours from an API.
 <br/>
 
 <img src="gif/Tours_List.gif" alt="tours list project gif" width="85%" height="85%">
+
+### Image Filter Animation :sparkles:
+
+An image filter animation which fetches movies data from TMBD API and uses framer motion for animation.
+<br/>
+:paperclip: View code [here](https://github.com/Ritika-Agrawal811/react-beginner-projects/tree/main/filter_animation)
+
+#### Concepts Used :memo:
+
+- Framer motion for animation
+- Context API
+- Axios to fetch API data
+
+<img src="https://drive.google.com/uc?export=view&id=1_sqrnpji5zMYtbdlKJB1XDuYuO3swynm" alt="tours list project gif" width="85%" height="85%">
