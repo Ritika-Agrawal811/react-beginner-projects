@@ -5,7 +5,7 @@ A collection of beginner friendly projects to learn and practice React JS. Each 
 - [Birthday Reminder](#birthday-reminder)
 - [Tours List](#tours-list-sparkles)
 - [Testimonials Carousel](#testimonials-carousel)
-- [Image Filter Animation]
+- [Image Filter Animation](#image-filter-animation-sparkles)
 
 ### Birthday Reminder :sparkles:
 
@@ -39,7 +39,7 @@ A responsive carousel to display testimonials!
 
 - Animation using Framer Motion
 
-<img src="https://drive.google.com/uc?export=view&id=1pDZoN3TQm2_WnNSTEzL9lBiXjOVaFsgY" alt="tours list project gif" width="85%" height="85%">
+<img src="https://drive.google.com/uc?export=view&id=1pDZoN3TQm2_WnNSTEzL9lBiXjOVaFsgY" alt="testimonials carousel project gif" width="85%" height="85%">
 
 ### Tours List :sparkles:
 
@@ -77,4 +77,4 @@ An image filter animation which fetches movies data from TMBD API and uses frame
 - Context API
 - Axios to fetch API data
 
-<img src="https://drive.google.com/uc?export=view&id=1_sqrnpji5zMYtbdlKJB1XDuYuO3swynm" alt="tours list project gif" width="85%" height="85%">
+<img src="https://drive.google.com/uc?export=view&id=1_sqrnpji5zMYtbdlKJB1XDuYuO3swynm" alt="framer animation project gif" width="85%" height="85%">
