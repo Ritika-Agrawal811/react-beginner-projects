@@ -16,13 +16,13 @@ const Testimonial = () => {
     visible: {
       x: "0",
       transition: {
-        duration: 1,
+        duration: 1.5,
       },
     },
     exit: {
       x: "100%",
       transition: {
-        duration: 0.5,
+        duration: 0.75,
       },
     },
   };
@@ -59,7 +59,11 @@ const Testimonial = () => {
           <h4 className={styles["testimonial-designation"]}>{job}</h4>
           <p className={styles["testimonial-text"]}>{text}</p>
         </div>
-        <Controls setIndex={setIndex} setIndicator={setIndicator} />
+        <Controls
+          setIndex={setIndex}
+          setIndicator={setIndicator}
+          index={index}
+        />
       </article>
     </section>
   );

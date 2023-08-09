@@ -40,7 +40,7 @@ A responsive carousel to display testimonials!
 
 - Animation using Framer Motion
 
-<img src="https://drive.google.com/uc?export=view&id=1pDZoN3TQm2_WnNSTEzL9lBiXjOVaFsgY" alt="testimonials carousel project gif" width="85%" height="85%">
+<img src="gif/Testimonials_Carousel.gif" alt="testimonials carousel project gif" width="85%" height="85%">
 
 ### Tours List :sparkles:
 
