@@ -6,6 +6,7 @@ A collection of beginner friendly projects to learn and practice React JS. Each 
 - [Tours List](#tours-list-sparkles)
 - [Testimonials Carousel](#testimonials-carousel)
 - [Image Filter Animation](#image-filter-animation-sparkles)
+- [Riddler](#riddler-sparkles)
 
 ### Birthday Reminder :sparkles:
 
@@ -77,4 +78,26 @@ An image filter animation which fetches movies data from TMBD API and uses frame
 - Context API
 - Axios to fetch API data
 
+<br/>
+
 <img src="https://drive.google.com/uc?export=view&id=1_sqrnpji5zMYtbdlKJB1XDuYuO3swynm" alt="framer animation project gif" width="85%" height="85%">
+
+### Riddler :sparkles:
+
+Riddler is a small project to display riddles.
+<br/>
+:paperclip: View code [here](https://github.com/Ritika-Agrawal811/react-beginner-projects/tree/main/riddler)
+
+#### Features :dart:
+
+- "Next Riddle" Button to show more riddles
+- Answers of a riddle is hidden & can be display with "show answer" button
+
+#### Concepts Used :memo:
+
+- Material UI for styling
+- Creating a Custom Hook useAxios to fetch API data
+
+<br/>
+
+<img src="https://drive.google.com/uc?export=view&id=1lkmfo3O3evW2yJJyOJpN5chkUx_TN8PH" alt="riddler project gif" width="85%" height="85%">
