@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-home {
+  background: linear-gradient(
+      to right,
+      rgba(19, 120, 228, 0.7),
+      rgba(126, 243, 102, 0.7)
+    ),
+    url("./media/home-bg.jpg") no-repeat;
+  background-size: cover;
+  min-height: 90vh;
+}
