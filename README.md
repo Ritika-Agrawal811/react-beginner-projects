@@ -2,9 +2,9 @@
 
 A collection of beginner friendly projects to learn and practice React JS. Each project focuses on different concepts.
 
-- [Birthday Reminder](#birthday-reminder)
+- [Birthday Reminder](#birthday-reminder-sparkles)
 - [Tours List](#tours-list-sparkles)
-- [Testimonials Carousel](#testimonials-carousel)
+- [Testimonials Carousel](#testimonials-carousel-sparkles)
 - [Image Filter Animation](#image-filter-animation-sparkles)
 - [Riddler](#riddler-sparkles)
 
